@@ -1,0 +1,121 @@
+.contact-h1 {
+  position: static;
+  top: 7rem;
+  left: 9.5rem;
+  display: block;
+  margin: 1rem 0 3rem 4.5rem;
+}
+
+.contact-container {
+  background-color: transparent;
+  display: block;
+  flex-direction: column;
+  gap: 4rem;
+  max-width: 100%;
+  padding: 0;
+  justify-content: center;
+  justify-content: space-evenly;
+  align-items: center;
+  position: static;
+  left: 150px;
+  top: 270px;
+  box-shadow: none;
+}
+
+.contact-container i {
+  color: var(--color-blue);
+  margin-right: 1rem;
+}
+
+.banner-logo {
+  display: none;
+  background-color: var(--color-orange);
+  position: relative;
+  height: 350px;
+  margin-top: 200px;
+  margin-bottom: 200px;
+  width: 100%;
+  justify-content: end;
+  align-items: center;
+}
+
+.banner-logo img {
+  width: 60%;
+  opacity: 0.1;
+  padding: 0rem 5rem;
+  padding-left: 28rem;
+  margin-left: 50rem;
+}
+
+.contact-container form {
+  display: flex;
+  gap: 2rem;
+  flex-direction: column;
+  padding: 0 2rem;
+}
+
+.contact-info {
+  background-color: var(--color-orange);
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  font-size: var(--font-medium);
+  margin-bottom: 0;
+  width: 100%;
+  align-items: center;
+  padding: 2rem 0rem;
+}
+
+.contact-info p {
+  margin: 5px;
+}
+
+.location-info,
+.phone-info,
+.hours-info {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.hours-info {
+  margin-left: 6.5rem;
+}
+
+.contact-form {
+  display: flex;
+  align-items: center;
+}
+
+.contact-form input,
+textarea {
+  width: 700px;
+  padding: 1.6rem;
+  font-size: var(--font-medium);
+}
+
+.contact-form input[type="submit"] {
+  border: none;
+  color: var(--color-white);
+  background-color: var(--color-blue);
+  width: 350px;
+  font-weight: var(--weight-large);
+  font-size: var(--font-large);
+  padding: 1.5rem;
+  margin-bottom: 4rem;
+}
+
+.contact-form input[type="submit"]:hover {
+  transition: 0.8 ease;
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+.contact-form input[type="submit"]:focus {
+  outline: 3px solid var(--color-orange);
+}
+
+.contact-form textarea {
+  font-family: var(--font-main);
+  font-size: var(--font-medium);
+}

@@ -1,0 +1,106 @@
+@import url("-header.css");
+@import url("-footer.css");
+@import url("-home-main.css");
+@import url("-about.css");
+@import url("-jackets.css");
+@import url("-individual-jacket.css");
+@import url("-contact.css");
+@import url("-checkout.css");
+@import url("-checkout-success.css");
+@import url("-variables.css");
+@import url("-media.css");
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  display: grid;
+  grid-template-areas:
+    "header"
+    "main"
+    "footer";
+  box-sizing: border-box;
+  margin: 0;
+  font-family: var(--font-main);
+  background-color: var(--color-grey);
+}
+
+header {
+  grid-area: header;
+}
+main {
+  grid-area: main;
+}
+footer {
+  grid-area: footer;
+}
+
+header,
+footer {
+  background-color: var(--color-blue);
+  color: var(--color-white);
+  font-family: var(--font-second);
+}
+
+a {
+  text-decoration: none;
+  color: var(--color-white);
+}
+
+footer a:hover {
+  border-bottom: 1px solid var(--color-white);
+}
+
+header a:after {
+  display: block;
+  content: "";
+  border-bottom: 1px solid var(--color-white);
+  transform: scaleX(0);
+  transition: transform 250ms ease-in-out;
+  transform-origin: 0% 50%;
+}
+
+header a:hover:after {
+  transform: scaleX(1);
+}
+
+.logo a:after {
+  border-bottom: none;
+}
+
+h1 {
+  color: var(--color-blue);
+  font-size: var(--font-x-large);
+  font-weight: var(--weight-x-large);
+  margin: 0;
+}
+
+.active {
+  border-bottom: 1px solid var(--color-white);
+}
+
+.cta {
+  background-color: var(--color-orange);
+  color: var(--color-white);
+}
+
+.cta:hover {
+  background-color: var(--color-blue);
+  color: var(--color-white);
+}
+
+input,
+textarea {
+  font-size: var(--font-form);
+  margin-bottom: 2rem;
+  padding: 0.6rem;
+  border: 3px solid #0f224750;
+  border-radius: 3px;
+}
+
+input[type="search"] {
+  margin-bottom: 0;
+}

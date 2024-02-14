@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" initial-scale="1.0" content="width=device-width" />
+    <meta
+      name="description"
+      content="The home page of RAINYDAYS - Pushing the Comfort Zone"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Orienta&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/92238a2726.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="src/css/index.css" />
+    <title>RAINYDAYS | Home</title>
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <div>
+          <a
+            href="index.html"
+            class="img-link"
+            title="Link to home page"
+            aria-label="link"
+          >
+            <img
+              src="./assets/images/RainyDays_Logo-white2.png"
+              alt="Rainydays logo"
+            />
+          </a>
+        </div>
+        <p>rainydays</p>
+      </div>
+      <label for="hamburger-menu"><i class="fa-solid fa-bars fa-xl"></i></label>
+      <input type="checkbox" id="hamburger-menu" />
+      <nav>
+        <ul>
+          <li><a href="index.html" title="Go to home page">Home</a></li>
+          <li><a href="about.html" title="Go to about page">About</a></li>
+          <li><a class="active" href="jackets.html" title="Go to jackets page">Jackets</a></li>
+          <li><a href="contact.html" title="Go to contact page">Contact</a></li>
+          <li class="list-item">
+            <a href="checkout.html" title="Go to checkout page">
+              <i
+                class="fa-solid fa-cart-shopping"
+                aria-label="Shopping cart icon"
+              ></i>
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <form>
+        <input
+          type="search"
+          name="search"
+          id="search"
+          title="Search here"
+          aria-label="Search input"
+          placeholder="Search..."
+        />
+      </form>
+    </header>
+    <main class="individual-main">
+      <p class="page-info">Jackets / Fleece</p>
+      <div class="fleece-container">
+        <div class="product-img-border">
+          <div class="product-img-background">
+            <img src="./assets/images/RainyDays_Jacket7.jpg" alt="warm fleece jacket product image" />
+          </div>
+        </div>
+        <div class="container-background">
+          <div class="title-container">
+            <h1>Warm fleece</h1>
+            <div class="review-container">
+              <div>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+              </div>
+              <div>
+                <p>68</p>
+              </div>
+            </div>
+          </div>
+          <h2>nok 350.00</h2>
+          <div class="product-description">
+            <p>
+              Say goodbye to chilly days and embrace unmatched warmth with our
+              premium fleece jacket.
+            </p>
+            <p>
+              Crafted with the softest and most insulating fleece material, it's
+              designed to keep you snug in the coldest of conditions.
+            </p>
+          </div>
+          <form>
+            <div>
+              <p class="product-choice">Select color:</p>
+              <div class="color-selector">
+                <label class="color-container" title="Click to select green/brown" aria-label="radio button" tabindex="0"
+                  >Green/brown
+                  <input type="radio" name="radio1" />
+                  <span class="radio-green"></span>
+                </label>
+                <label class="color-container" title="Click to select black" aria-label="radio button" tabindex="0"
+                  >Black
+                  <input type="radio" name="radio1" />
+                  <span class="radio-black"></span>
+                </label>
+            </div>
+            <div>
+              <p class="product-choice">Select size:</p>
+              <div class="size-selector">
+                <label class="size-container" title="Click to select size small" aria-label="radio button" tabindex="0">
+                  <input type="radio" name="radio2" />
+                  <span class="radio-small"><i class="fa-solid fa-s fa-lg"></i></span>
+                </label>
+                <label class="size-container" title="Click to select size medium" aria-label="radio button" tabindex="0">
+                  <input type="radio" name="radio2" />
+                  <span class="radio-medium"><i class="fa-solid fa-m fa-lg"></i></span>
+                </label>
+                <label class="size-container" title="Click to select size large" aria-label="radio button" tabindex="0">
+                  <input type="radio" name="radio2" />
+                  <span class="radio-large"><i class="fa-solid fa-l fa-lg"></i></span>
+                </label>
+                <label class="size-container" title="Click to select size extra large" aria-label="radio button" tabindex="0">
+                  <input type="radio" name="radio2" />
+                  <span class="radio-x-large"><i class="fa-solid fa-x fa-lg"></i><i class="fa-solid fa-l fa-lg"></i></span>
+                </label>
+            </div>
+            <p class="size-guide">Size guide</p>
+            <div class="input-btn-container">
+            <input
+              class="product-add-to-cart"
+              type="submit"
+              value="add to cart"
+              title="Click to add item to cart"
+              aria-label="button"
+            /></div>
+          </form>
+          <div class="info-links">
+            <p>Free shipping above 1000kr</p>
+            <p><a href="#" title="Click to show info" aria-label="link to shipping and delivery info">Shipping and delivery</a></p>
+            <p><a href="#" title="Click to show info" aria-label="link to return policy info">Return policy</a></p>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <div class="copyright">
+        <img
+          src="assets/images/RainyDays_Logo-white2.png"
+          alt="Rainydays logo"
+        />
+        <p>2023 &copy; RAINYDAYS - All Rights Reserved</p>
+      </div>
+      <div>
+        <div class="newsletter-form">
+          <p>Sign up to our newsletter!</p>
+          <form method="GET">
+            <input
+              type="email"
+              name="news-email"
+              id="news-email"
+              title="Enter your email"
+              aria-label="Email input"
+              placeholder="Your email here"
+              required
+            />
+            <input
+              type="submit"
+              value="Sign up"
+              title="Click to sign up"
+              aria-label="Submit button"
+            />
+          </form>
+        </div>
+      </div>
+      <div class="location">
+        <p class="headline">Location</p>
+        <p class="location-p">Bryggen 43</p>
+        <p class="location-p">5003 Bergen</p>
+        <p class="location-p">Norway</p>
+      </div>
+      <div class="socials">
+        <p class="headline">Social</p>
+        <a href="#" title="Go to our facebook page" aria-label="link"
+          ><i class="fa-brands fa-facebook fa-lg"></i>
+          <p class="test">Rainydays</p></a
+        >
+        <a href="#" title="Go to our instagram page" aria-label="link"
+          ><i class="fa-brands fa-instagram fa-lg"></i>
+          <p class="test">Rainydays</p></a
+        >
+        <a href="#" title="Go to our twitter page" aria-label="link"
+          ><i class="fa-brands fa-square-x-twitter fa-lg"></i>
+          <p class="test">Rainydays</p></a
+        >
+      </div>
+      <div class="links">
+        <p class="headline">Links</p>
+        <a
+          href="index.html"
+          class="footer-links"
+          title="Go to home page"
+          aria-label="link"
+          >Home</a
+        >
+        <a
+          href="about.html"
+          class="footer-links"
+          title="Go to about page"
+          aria-label="link"
+          >About</a
+        >
+        <a
+          href="jackets.html"
+          class="footer-links"
+          title="Go to jackets page"
+          aria-label="link"
+          >Jackets</a
+        >
+        <a
+          href="contact.html"
+          class="footer-links"
+          title="Go to about page"
+          aria-label="link"
+          >Contact</a
+        >
+        <a
+          href="#"
+          class="footer-links"
+          title="Click here for help"
+          aria-label="link"
+          >Help</a
+        >
+      </div>
+      <p class="copyright-mobile">
+        2023 &copy; RAINYDAYS - All Rights Reserved
+      </p>
+    </footer>
+  </body>
+</html>

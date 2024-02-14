@@ -1,0 +1,107 @@
+.home-banner {
+  background-image: url("../../assets/images/ansgar-scheffold-IZZ78Ugqsow-unsplash.jpg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  min-height: 70vh;
+}
+
+.home-banner div {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-family: var(--font-third);
+  color: var(--color-blue);
+}
+
+.banner-p {
+  text-transform: uppercase;
+  font-size: 5.3rem;
+  margin: 0;
+  margin-top: 4rem;
+}
+
+.banner-motto {
+  margin: 0;
+  font-size: 1.6rem;
+}
+
+.home-cta {
+  padding: 20px 70px;
+  text-transform: uppercase;
+  font-weight: bolder;
+  font-size: 1.7em;
+  box-shadow: var(--box-shadow);
+}
+
+.cta-container {
+  margin-top: 4rem;
+}
+
+.cta-container:hover {
+  transition: 0.8 ease;
+  transform: scale(1.05);
+}
+
+.home-content {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 3rem;
+  margin-right: auto;
+  margin-left: auto;
+  gap: 3rem;
+  max-width: 1600px;
+  padding: 0rem 3rem;
+}
+
+.home-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.home-title h2 {
+  font-size: var(--font-larger);
+  font-weight: 400;
+}
+
+.home-content-p {
+  font-size: var(--font-medium);
+  line-height: 2.5rem;
+  margin-top: 3rem;
+}
+
+.featured-products {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  margin-top: 2.5rem;
+  justify-content: center;
+}
+
+.background-div {
+  background-color: var(--color-white);
+  padding: 0.5rem;
+  border-radius: var(--radius-standard);
+  text-align: center;
+}
+
+.background-div p {
+  margin: 0;
+  text-align: center;
+  color: var(--color-blue);
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: var(--font-medium);
+}
+
+.div-border {
+  border: 1px solid var(--color-border);
+  padding: 2rem;
+  background-color: transparent;
+  height: 100%;
+}
+
+.featured-products img {
+  width: 30rem;
+}

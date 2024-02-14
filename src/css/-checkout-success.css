@@ -1,0 +1,53 @@
+.success-main {
+  margin: 0;
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  text-align: center;
+  color: var(--color-white);
+  font-size: var(--font-medium);
+}
+
+.success-text-content .bigger-p {
+  font-size: var(--font-larger);
+  font-weight: var(--weight-large);
+  margin: 2rem 0rem;
+  margin-bottom: 4rem;
+}
+
+.success-background {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    url("../../assets/images/dmitry-limonov-ewM0ZVtYo14-unsplash.jpg");
+  background-repeat: no-repeat;
+  min-height: 1200px;
+  background-size: cover;
+  background-position: center;
+  box-shadow: var(--box-shadow);
+}
+
+.success-background i {
+  margin-top: 10rem;
+  margin-bottom: 5rem;
+  font-size: 9rem;
+}
+
+.success-background p {
+  margin: 0;
+  line-height: 2.5rem;
+}
+
+.cta-success-container {
+  margin-top: 25rem;
+  display: inline-block;
+}
+
+.success-cta {
+  padding: 1rem 3rem;
+  font-size: var(--font-medium);
+  font-weight: var(--weight-medium);
+}
+
+.cta-success-container:hover {
+  transition: 0.8 ease;
+  transform: scale(1.05);
+}

@@ -1,0 +1,251 @@
+.individual-main {
+  max-width: 1300px;
+  margin-top: 2rem;
+  margin-bottom: 0;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.fleece-container {
+  display: block;
+}
+
+.product-img-border {
+  border: 1px solid var(--color-blue);
+  padding: 2rem;
+  max-height: 914.5px;
+  margin: 0rem 2rem;
+  margin-bottom: 4rem;
+}
+
+.product-img-background {
+  background-color: var(--color-white);
+  padding: 2rem;
+  border-radius: var(--radius-standard);
+}
+
+.product-img-border img {
+  max-width: 700px;
+}
+
+.individual-main h1 {
+  color: var(--color-blue);
+  text-transform: uppercase;
+  font-size: var(--font-larger);
+  font-weight: var(--weight-large);
+}
+
+.container-background {
+  background-color: var(--color-white);
+  margin: 0;
+  padding: 2rem 4rem;
+  border-radius: 5rem 5rem 0rem 0rem;
+}
+
+.title-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.review-container {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  align-items: center;
+}
+
+.review-container .fa-solid {
+  color: var(--color-orange);
+  font-size: var(--font-medium);
+}
+
+.review-container .fa-regular,
+.review-container p {
+  font-size: var(--font-medium);
+}
+
+.individual-main h2 {
+  text-transform: uppercase;
+  font-weight: var(--weight-small);
+  font-size: var(--font-larger);
+  margin: 0;
+}
+
+.product-description p {
+  font-size: var(--font-large);
+  line-height: 2.7rem;
+  margin: 2.5rem 0rem;
+}
+
+.page-info {
+  font-size: var(--font-medium);
+  font-weight: var(--weight-medium);
+  margin-left: 2rem;
+}
+
+.product-choice {
+  font-size: var(--font-medium);
+  font-weight: var(--weight-large);
+  margin-top: 0;
+}
+
+.size-guide {
+  font-size: var(--font-small);
+  text-decoration: underline;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+}
+
+.size-guide:hover {
+  cursor: pointer;
+}
+
+.info-links {
+  text-align: center;
+  font-size: var(--font-small);
+  margin: 2rem 0rem;
+}
+
+.info-links p {
+  margin: 3rem 0rem;
+}
+
+.info-links a {
+  color: black;
+  text-decoration: underline;
+}
+
+.info-links a:hover {
+  color: var(--color-orange);
+}
+
+.input-btn-container {
+  text-align: center;
+}
+
+.product-add-to-cart {
+  background-color: var(--color-orange);
+  color: var(--color-white);
+  padding: 1.5rem 4.5rem;
+  border: none;
+  border-radius: 0;
+  text-transform: uppercase;
+  font-size: var(--font-larger);
+  font-weight: var(--weight-large);
+  margin: 1rem 0rem;
+  box-shadow: var(--box-shadow);
+}
+
+.product-add-to-cart:hover {
+  background-color: var(--color-blue);
+  cursor: pointer;
+  transition: 0.8 ease;
+  transform: scale(1.05);
+}
+
+/* Custom radio buttons */
+.color-selector,
+.size-selector {
+  margin: 0;
+}
+
+.color-selector {
+  display: flex;
+  gap: 3rem;
+}
+
+.color-container {
+  display: block;
+  position: relative;
+  padding-left: 4rem;
+  margin-bottom: 4rem;
+  cursor: pointer;
+  font-size: var(--font-large);
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.color-container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.radio-green,
+.radio-black {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 3rem;
+  width: 3rem;
+  background-color: #6a5e43;
+  border-radius: 50%;
+}
+
+.radio-black {
+  background-color: black;
+}
+
+.color-container:hover input ~ .radio-green,
+.color-container:hover input ~ .radio-black {
+  border: 6px solid #34abeb;
+}
+
+.color-container input:checked ~ .radio-green,
+.color-container input:checked ~ .radio-black {
+  border: 6px solid #34abeb;
+}
+
+.size-container {
+  text-align: center;
+  position: relative;
+}
+
+.size-container i {
+  margin-top: 25px;
+  font-size: var(--font-large);
+}
+
+.size-selector {
+  display: flex;
+  gap: 3rem;
+  padding-bottom: 1.5rem;
+}
+
+.size-container input {
+  position: absolute;
+  top: 1rem;
+  right: 1.3rem;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.radio-small,
+.radio-medium,
+.radio-large,
+.radio-x-large {
+  display: block;
+  border: 1px solid black;
+  width: 62px;
+  height: 55px;
+  border-radius: 3px;
+}
+
+.size-container input:checked ~ .radio-small,
+.size-container input:checked ~ .radio-medium,
+.size-container input:checked ~ .radio-large,
+.size-container input:checked ~ .radio-x-large {
+  background-color: var(--color-blue);
+  color: var(--color-white);
+}
+
+.size-container input:hover ~ .radio-small,
+.size-container input:hover ~ .radio-medium,
+.size-container input:hover ~ .radio-large,
+.size-container input:hover ~ .radio-x-large {
+  transition: 0.8 ease;
+  transform: scale(1.05);
+}

@@ -1,0 +1,64 @@
+.about-content {
+  display: block;
+}
+
+.text-content {
+  text-align: center;
+  max-width: 100%;
+}
+
+.about-content .hiking-image {
+  width: 100%;
+  height: 800px;
+  object-fit: cover;
+  position: relative;
+}
+
+.text-content h1 {
+  background-color: var(--color-orange);
+  display: inline-block;
+  position: absolute;
+  top: 15rem;
+  left: 0;
+  padding: 1rem 4rem;
+  min-width: 451.05px;
+}
+
+.text-content hr {
+  border: 1px solid var(--color-blue);
+  width: 50%;
+  display: none;
+}
+
+.p-content p {
+  padding: 2rem 5rem;
+  text-align: left;
+  font-size: var(--font-larger);
+  line-height: 4rem;
+}
+
+.p-content img {
+  text-align: center;
+  width: 10%;
+  opacity: 0.7;
+  margin: 1rem 0rem;
+  object-fit: contain;
+}
+
+.about-cta {
+  padding: 1rem 2.7rem;
+  font-weight: var(--weight-medium);
+  font-size: var(--font-medium);
+  box-shadow: var(--box-shadow);
+}
+
+.about-cta-div {
+  margin-top: 1rem;
+  margin-bottom: 5rem;
+  display: inline-block;
+}
+
+.about-cta-div:hover {
+  transition: 0.8 ease;
+  transform: scale(1.05);
+}

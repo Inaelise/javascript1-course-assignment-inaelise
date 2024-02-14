@@ -1,0 +1,38 @@
+/* Use this file to store your useful variables */
+/* This could be colors, fonts, or padding sizes! */
+
+:root {
+  --color-blue: #0f2247;
+  --color-orange: #be8e2e;
+  --color-white: #ffffff;
+  --color-grey: #b6bac1;
+  --color-border: #0f224773;
+
+  --font-x-small: 1rem;
+  --font-form: 1.2rem;
+  --font-small: 1.4rem;
+  --font-medium: 1.8rem;
+  --font-large: 2.2rem;
+  --font-larger: 2.5rem;
+  --font-x-large: 5rem;
+
+  --font-main: "Roboto", Verdana, Geneva, Tahoma, sans-serif;
+  --font-second: "Inter", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+    sans-serif;
+  --font-third: "Orienta", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+    sans-serif;
+
+  --weight-x-small: 300;
+  --weight-small: 400;
+  --weight-medium: 500;
+  --weight-large: 700;
+  --weight-x-large: 900;
+
+  --box-shadow: 1px 1px 5px #00000037;
+
+  --line-height: 1.8rem;
+
+  --radius-standard: 0.2rem;
+}

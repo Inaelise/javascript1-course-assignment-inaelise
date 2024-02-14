@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" initial-scale="1.0" content="width=device-width" />
+    <meta
+      name="description"
+      content="The checkout page of RAINYDAYS - view your shopping cart items before checking out"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Orienta&family=Roboto:wght@400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+    <script
+      src="https://kit.fontawesome.com/92238a2726.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="src/css/index.css" />
+    <title>RAINYDAYS | Checkout</title>
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <div>
+          <a
+            href="index.html"
+            class="img-link"
+            title="Link to home page"
+            aria-label="link"
+          >
+            <img
+              src="./assets/images/RainyDays_Logo-white2.png"
+              alt="Rainydays logo"
+            />
+          </a>
+        </div>
+        <p>rainydays</p>
+      </div>
+      <label for="hamburger-menu"><i class="fa-solid fa-bars fa-xl"></i></label>
+      <input type="checkbox" id="hamburger-menu" />
+      <nav>
+        <ul>
+          <li><a href="index.html" title="Go to home page">Home</a></li>
+          <li><a href="about.html" title="Go to about page">About</a></li>
+          <li>
+            <a href="jackets.html" title="Go to jackets page">Jackets</a>
+          </li>
+          <li>
+            <a href="contact.html" title="Go to contact page">Contact</a>
+          </li>
+          <li class="list-item">
+            <a class="active" href="checkout.html" title="Go to checkout page">
+              <i
+                class="fa-solid fa-cart-shopping"
+                aria-label="Shopping cart icon"
+              ></i>
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <form>
+        <input
+          type="search"
+          name="search"
+          id="search"
+          title="Search here"
+          aria-label="Search input"
+          placeholder="Search..."
+        />
+      </form>
+    </header>
+    <main class="checkout-main">
+      <h1>Shopping cart</h1>
+      <div class="cart-container">
+        <div class="shopping-cart">
+          <p>1 Item</p>
+          <hr />
+          <div class="cart-part-one">
+            <div>
+              <img
+                src="./assets/images/RainyDays_Jacket7.jpg"
+                alt="warm fleece jacket product image"
+              />
+            </div>
+            <i
+              class="fa-solid fa-trash-can fa-xl trash-mobile"
+              aria-label="trash icon"
+            >
+            </i>
+            <div>
+              <div class="cart-product-name">
+                <p>Rainydays</p>
+                <p class="description">Warm fleece</p>
+              </div>
+              <div class="cart-product-size">
+                <p>Size:</p>
+                <p class="description">Large</p>
+              </div>
+              <div class="cart-product-color">
+                <p>Color:</p>
+                <i
+                  class="fa-solid fa-circle fa-xl"
+                  title="Green/brown color icon"
+                ></i>
+                <p class="description">Green/brown</p>
+              </div>
+              <div>
+                <label for="quantity">Quantity:</label>
+                <input
+                  type="text"
+                  name="quantity"
+                  id="quantity"
+                  value="1"
+                  inputmode="numeric"
+                  title="Enter quantity here"
+                  aria-label="quantity input"
+                />
+              </div>
+            </div>
+            <div class="flex-last">
+              <span>
+                <i
+                  class="fa-solid fa-trash-can fa-xl"
+                  title="Delete from cart"
+                  aria-label="trash icon"
+                >
+                </i>
+              </span>
+            </div>
+          </div>
+          <div class="cart-subtotal">
+            <p>Subtotal</p>
+            <p>NOK 350.00</p>
+          </div>
+          <hr />
+          <div class="cart-shipping-price">
+            <p>Shipping</p>
+            <p>NOK 59.00</p>
+          </div>
+          <hr />
+          <div class="cart-total-amount">
+            <p>Total amount to pay</p>
+            <p>NOK 409.00</p>
+          </div>
+        </div>
+        <form class="checkout-form" action="checkout-success.html">
+          <h2>1. Shipping and billing information</h2>
+          <div class="shipping-billing-info">
+            <div class="double-inputs">
+              <input
+                class="checkout-input"
+                type="text"
+                name="fname"
+                id="fname"
+                title="Enter your first name here"
+                aria-label="first name input"
+                placeholder="First name*"
+                required
+              />
+              <input
+                class="checkout-input"
+                type="text"
+                name="lname"
+                id="lname"
+                title="Enter your last name here"
+                aria-label="last name input"
+                placeholder="Last name*"
+                required
+              />
+            </div>
+            <input
+              class="checkout-input"
+              type="email"
+              name="email"
+              id="email"
+              title="Enter your email here"
+              aria-label="email input"
+              placeholder="Email*"
+              required
+            />
+            <input
+              class="checkout-input"
+              type="text"
+              name="address"
+              id="address"
+              title="Enter your address here"
+              aria-label="address input"
+              placeholder="Address*"
+              required
+            />
+            <div class="double-inputs">
+              <input
+                class="checkout-input"
+                type="number"
+                name="p-code"
+                id="p-code"
+                title="Enter your postal code here"
+                aria-label="postal code input"
+                placeholder="Postal code*"
+                required
+              />
+              <input
+                class="checkout-input"
+                type="text"
+                name="city"
+                id="city"
+                title="Enter your city here"
+                aria-label="city input"
+                placeholder="City*"
+                required
+              />
+            </div>
+            <div class="double-inputs">
+              <input
+                class="checkout-input"
+                type="tel"
+                name="phone"
+                id="phone"
+                title="Enter your phone number here"
+                aria-label="phone number input"
+                placeholder="Phone number (optional)"
+              />
+              <input
+                class="checkout-input"
+                type="text"
+                name="country"
+                id="country"
+                title="Enter your country here"
+                aria-label="country input"
+                placeholder="Country*"
+                required
+              />
+            </div>
+            <div>
+              <label
+                class="checkbox-container"
+                title="Check this if you want a different delivery address"
+                aria-label="checkbox"
+                tabindex="0"
+                >Send to a different delivery address?
+                <input
+                  type="checkbox"
+                  name="delivery-address"
+                  id="delivery-address"
+                />
+                <span class="checkmark"></span>
+              </label>
+            </div>
+          </div>
+          <h2>2. Choose shipping method</h2>
+          <div class="shipping-method" tabindex="0">
+            <div>
+              <label
+                class="radio-container"
+                title="Click to choose eco friendly shipping"
+                aria-label="radio button"
+              >
+                <div>
+                  <p>Eco friendly shipping - NOK 59.00</p>
+                  <p class="description">7-10 business days</p>
+                </div>
+                <div>
+                  <i class="fa-solid fa-leaf fa-xl"></i>
+                </div>
+                <input
+                  type="radio"
+                  name="shipping"
+                  value="eco-shipping"
+                  checked
+                /><span class="checkmark"></span>
+              </label>
+            </div>
+            <div>
+              <label
+                class="radio-container"
+                title="Click to choose express shipping"
+                aria-label="radio button"
+              >
+                <div>
+                  <p>Express shipping - NOK 89.00</p>
+                  <p class="description">2-5 business days</p>
+                </div>
+                <div>
+                  <i class="fa-solid fa-truck fa-xl"></i>
+                </div>
+                <input type="radio" name="shipping" value="express-shipping" />
+                <span class="checkmark"></span>
+              </label>
+            </div>
+            <div>
+              <label
+                class="radio-container"
+                title="Click to choose priority shipping"
+                aria-label="radio button"
+              >
+                <div>
+                  <p>Priority shipping - NOK 109.00</p>
+                  <p class="description">
+                    Same day delivery (only in Norway), order before 10AM
+                  </p>
+                </div>
+                <div>
+                  <i class="fa-solid fa-truck fa-xl"></i>
+                </div>
+                <input type="radio" name="shipping" value="prio-shipping" />
+                <span class="checkmark"></span>
+              </label>
+            </div>
+          </div>
+          <h2>3. Choose payment method</h2>
+          <div class="payment-method" tabindex="0">
+            <div>
+              <label
+                class="radio-container"
+                title="Click to choose card payment"
+                aria-label="radio button"
+              >
+                <div>
+                  <p>Card payment</p>
+                  <p class="description">No extra fees</p>
+                </div>
+                <div>
+                  <i class="fa-regular fa-credit-card fa-xl"></i>
+                </div>
+                <input type="radio" name="payment" value="card-payment" />
+                <span class="checkmark"></span>
+              </label>
+            </div>
+            <div>
+              <label
+                class="radio-container"
+                title="Click to choose paypal payment"
+                aria-label="radio button"
+              >
+                <div>
+                  <p>PayPal</p>
+                  <p class="description">No extra fees</p>
+                </div>
+                <div>
+                  <i class="fa-brands fa-paypal fa-xl"></i>
+                </div>
+                <input type="radio" name="payment" value="paypal" />
+                <span class="checkmark"></span>
+              </label>
+            </div>
+          </div>
+          <div class="submit-container">
+            <input
+              class="cta cta-checkout"
+              type="submit"
+              value="Confirm purchase"
+              title="Click to confirm purchase"
+              aria-label="button"
+            />
+          </div>
+        </form>
+      </div>
+    </main>
+    <footer>
+      <div class="copyright">
+        <img
+          src="assets/images/RainyDays_Logo-white2.png"
+          alt="Rainydays logo"
+        />
+        <p>2023 &copy; RAINYDAYS - All Rights Reserved</p>
+      </div>
+      <div>
+        <div class="newsletter-form">
+          <p>Sign up to our newsletter!</p>
+          <form method="GET">
+            <input
+              type="email"
+              name="news-email"
+              id="news-email"
+              title="Enter your email"
+              aria-label="Email input"
+              placeholder="Your email here"
+              required
+            />
+            <input
+              type="submit"
+              value="Sign up"
+              title="Click to sign up"
+              aria-label="Submit button"
+            />
+          </form>
+        </div>
+      </div>
+      <div class="location">
+        <p class="headline">Location</p>
+        <p class="location-p">Bryggen 43</p>
+        <p class="location-p">5003 Bergen</p>
+        <p class="location-p">Norway</p>
+      </div>
+      <div class="socials">
+        <p class="headline">Social</p>
+        <a href="#" title="Go to our facebook page" aria-label="link"
+          ><i class="fa-brands fa-facebook fa-lg"></i>
+          <p class="test">Rainydays</p></a
+        >
+        <a href="#" title="Go to our instagram page" aria-label="link"
+          ><i class="fa-brands fa-instagram fa-lg"></i>
+          <p class="test">Rainydays</p></a
+        >
+        <a href="#" title="Go to our twitter page" aria-label="link"
+          ><i class="fa-brands fa-square-x-twitter fa-lg"></i>
+          <p class="test">Rainydays</p></a
+        >
+      </div>
+      <div class="links">
+        <p class="headline">Links</p>
+        <a
+          href="index.html"
+          class="footer-links"
+          title="Go to home page"
+          aria-label="link"
+          >Home</a
+        >
+        <a
+          href="about.html"
+          class="footer-links"
+          title="Go to about page"
+          aria-label="link"
+          >About</a
+        >
+        <a
+          href="jackets.html"
+          class="footer-links"
+          title="Go to jackets page"
+          aria-label="link"
+          >Jackets</a
+        >
+        <a
+          href="contact.html"
+          class="footer-links"
+          title="Go to about page"
+          aria-label="link"
+          >Contact</a
+        >
+        <a
+          href="#"
+          class="footer-links"
+          title="Click here for help"
+          aria-label="link"
+          >Help</a
+        >
+      </div>
+      <p class="copyright-mobile">
+        2023 &copy; RAINYDAYS - All Rights Reserved
+      </p>
+    </footer>
+  </body>
+</html>
