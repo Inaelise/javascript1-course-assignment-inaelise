@@ -1,11 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width" initial-scale="1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" initial-scale="1.0" />
+    <meta
+      name="description"
+      content="The home page of RAINYDAYS - Pushing the Comfort Zone"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <script type="module" src="./js/index.mjs"></script>
+    <script
+      src="https://kit.fontawesome.com/92238a2726.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="./css/index.css" />
     <title>RAINYDAYS | Home page</title>
-</head>
-<body>
-    
-</body>
+  </head>
+  <body>
+    <header>
+      <div class="logo-container">
+        <img
+          class="logo"
+          src="./images/RainyDays_Logo2-white.png"
+          alt="Rainydays logo"
+        />
+      </div>
+      <nav>
+        <ul>
+          <li>
+            <a class="active" href="index.html" title="Go to home page">Home</a>
+          </li>
+          <li>
+            <a href="about.html" title="Go to about page">About</a>
+          </li>
+          <li>
+            <a href="contact.html" title="Go to contact page">Contact</a>
+          </li>
+          <li>
+            <a href="checkout.html" title="Go to checkout page">
+              <div class="cart-icon">
+                <i
+                  class="fa-solid fa-cart-shopping fa-xl"
+                  aria-label="Shopping cart icon"
+                ></i>
+                <span>0</span>
+              </div>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="home-main">
+      <h1>Our collection</h1>
+      <div class="main-container">
+        <div class="filter-container">
+          <label for="category">Filter</label>
+          <select name="category" id="category">
+            <option value="">Choose category</option>
+            <option value="female">Women</option>
+            <option value="male">Men</option>
+          </select>
+        </div>
+        <div id="display-container"></div>
+      </div>
+    </main>
+
+    <footer></footer>
+  </body>
 </html>

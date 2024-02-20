@@ -1,0 +1,17 @@
+.icon-cart {
+  position: relative;
+}
+
+.cart-icon span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: red;
+  color: var(--white);
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  position: absolute;
+  top: 250px;
+  left: 55px;
+}

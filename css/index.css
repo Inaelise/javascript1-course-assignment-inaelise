@@ -1,0 +1,23 @@
+@import url(-header.css);
+@import url(-home-page.css);
+@import url(-variables.css);
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  box-sizing: border-box;
+  min-height: 100vh;
+  margin: 0;
+  display: block;
+  font-family: "Lato", sans-serif;
+  background-color: var(--blue);
+}
+
+a {
+  text-decoration: none;
+  color: unset;
+}
