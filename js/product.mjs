@@ -1,5 +1,6 @@
 import { fetchProducts } from "./utils/fetchProducts.mjs";
 import { API_URL } from "./utils/api.mjs";
+import { addToCart, createCart } from "./utils/shoppingCart.mjs";
 
 function renderProductDetailHtml(items) {
   const productContent = document.createElement("div");
@@ -52,6 +53,9 @@ function renderProductDetailHtml(items) {
   const productButton = document.createElement("button");
   productButton.classList.add = "add-to-cart-btn";
   productButton.textContent = "Add to cart";
+  productButton.addEventListener("click", () => {
+    addToCart(items);
+  });
 
   productSize.append(sizeOptionTitle, sizeOptions);
   productColor.append(colorOptionTitle);
@@ -78,6 +82,7 @@ function displayProductDetail(items) {
 
 async function main() {
   const productId = new URLSearchParams(window.location.search).get("id");
+  createCart();
   try {
     const { data: items } = await fetchProducts(`${API_URL}/${productId}`);
     displayProductDetail(items);
