@@ -60,7 +60,6 @@ function renderProductDetailHtml(items) {
   productSize.append(sizeOptionTitle, sizeOptions);
   productColor.append(colorOptionTitle);
   productInfoContainer.append(
-    productTitle,
     productPrice,
     productDescription,
     productSize,
@@ -68,7 +67,11 @@ function renderProductDetailHtml(items) {
     productButton
   );
   productImageContainer.append(productImage);
-  productContent.append(productImageContainer, productInfoContainer);
+  productContent.append(
+    productTitle,
+    productImageContainer,
+    productInfoContainer
+  );
 
   return productContent;
 }
