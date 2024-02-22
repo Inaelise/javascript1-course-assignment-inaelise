@@ -20,3 +20,26 @@ export function addToCart(items) {
   }
   localStorage.setItem("cart", JSON.stringify(cart));
 }
+
+export function removeFromCart(items) {
+  const cart = JSON.parse(localStorage.getItem("cart"));
+  const itemIndex = cart.findIndex(function (currentItem) {
+    if (items.id === currentItem.id) {
+      return true;
+    }
+    return false;
+  });
+  if (itemIndex !== -1) {
+    cart.splice(itemIndex, 1);
+    localStorage.setItem("cart", JSON.stringify(cart));
+  }
+  location.reload();
+}
+
+// Add to purchase button
+export function clearCart() {
+  const cart = JSON.parse(localStorage.getItem("cart"));
+  if (cart) {
+    localStorage.setItem("cart", JSON.stringify([]));
+  }
+}
