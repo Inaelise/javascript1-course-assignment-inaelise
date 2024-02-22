@@ -1,5 +1,6 @@
 /* import { showProductDetail } from "./showProductDetail.mjs"; */
 import { API_URL } from "./utils/api.mjs";
+import { upDateAmount } from "./utils/iconCartAmount.mjs";
 import { fetchProducts } from "./utils/fetchProducts.mjs";
 
 function renderProductHtml(item) {
@@ -33,8 +34,9 @@ function displayProductList(items) {
 async function main() {
   try {
     const { data: items } = await fetchProducts(API_URL);
+    // Updates cart amount on checkout icon
+    upDateAmount();
     displayProductList(items);
-    /* showProductDetail(items); */
     console.log(items); // Remember to remove.
   } catch (error) {
     console.log("Error", error);
