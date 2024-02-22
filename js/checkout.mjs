@@ -15,11 +15,38 @@ function renderCheckoutHtml(items) {
 
   const productTitle = document.createElement("h2");
   productTitle.classList.add = "product-title";
-  productTitle.textContent = `${items.quantity} x ${items.title}`;
+  productTitle.textContent = `${items.title}`;
 
   const productPrice = document.createElement("h3");
   productPrice.classList.add = "product-price";
   productPrice.textContent = `NOK ${items.price * items.quantity}`;
+
+  const selectedSize = document.createElement("p");
+  selectedSize.textContent = `Size: ${items.size}`;
+
+  const selectedColor = document.createElement("p");
+  selectedColor.textContent = `Color: ${items.color}`;
+
+  const quantityContainer = document.createElement("div");
+  quantityContainer.classList.add = "quantity-container";
+
+  const increaseQnty = document.createElement("button");
+  increaseQnty.classList.add = "plus";
+  increaseQnty.innerHTML = `<i class="fa-solid fa-plus"></i>`;
+  increaseQnty.addEventListener("click", () => {
+    addQuantity();
+  });
+
+  const quantity = document.createElement("p");
+  quantity.id = "quantity";
+  quantity.textContent = items.quantity;
+
+  const decreaseQnty = document.createElement("button");
+  decreaseQnty.classList.add = "minus";
+  decreaseQnty.innerHTML = `<i class="fa-solid fa-minus"></i>`;
+  decreaseQnty.addEventListener("click", () => {
+    subtractQuantity();
+  });
 
   const deleteItem = document.createElement("button");
   deleteItem.classList.add = "delete-button";
@@ -30,10 +57,26 @@ function renderCheckoutHtml(items) {
     removeFromCart(items);
   });
 
-  productInfoContainer.append(productTitle, productPrice, deleteItem);
+  quantityContainer.append(decreaseQnty, quantity, increaseQnty);
+  productInfoContainer.append(
+    productTitle,
+    productPrice,
+    selectedSize,
+    selectedColor,
+    quantityContainer,
+    deleteItem
+  );
   productImageContainer.append(productImage);
   productContent.append(productImageContainer, productInfoContainer);
   return productContent;
+}
+
+function subtractQuantity() {
+  //
+}
+
+function addQuantity() {
+  //
 }
 
 function displayCart() {

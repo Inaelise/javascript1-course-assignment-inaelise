@@ -28,27 +28,32 @@ function renderProductDetailHtml(items) {
   productDescription.textContent = items.description;
 
   const productSize = document.createElement("select");
-  productSize.id = `size-selector ${items.id}`;
+  productSize.id = "size-selector";
   productSize.classList.add = "selector";
   productSize.title = "Click to select size";
   productSize.ariaLabel = "Select button";
-
-  const sizeOptionTitle = document.createElement("option");
-  sizeOptionTitle.textContent = "Size:";
-
-  // Make option for each size
-  const sizeOptions = document.createElement("option");
+  productSize.innerHTML = `
+  <option>Size:</option>
+  ${items.sizes.map((size) => `<option value="${size}">${size}</option>`)}
+  `;
 
   const productColor = document.createElement("select");
-  productColor.id = `color-selector ${items.id}`;
-  productSize.classList.add = "selector";
-  productSize.title = "Click to select color";
-  productSize.ariaLabel = "Select button";
+  productColor.id = "color-selector";
+  productColor.classList.add = "selector";
+  productColor.title = "Click to select color";
+  productColor.ariaLabel = "Select button";
 
   const colorOptionTitle = document.createElement("option");
   colorOptionTitle.textContent = "Color:";
 
-  // Make quantity select??
+  const colorOptions = document.createElement("option");
+  colorOptions.value = items.baseColor;
+  colorOptions.textContent = items.baseColor;
+
+  const productQuantity = document.createElement("input");
+  productQuantity.type = "number";
+  productQuantity.id = "quantity-input";
+  productQuantity.value = 1;
 
   const productButton = document.createElement("button");
   productButton.classList.add = "add-to-cart-btn";
@@ -57,13 +62,13 @@ function renderProductDetailHtml(items) {
     addToCart(items);
   });
 
-  productSize.append(sizeOptionTitle, sizeOptions);
-  productColor.append(colorOptionTitle);
+  productColor.append(colorOptionTitle, colorOptions);
   productInfoContainer.append(
     productPrice,
     productDescription,
     productSize,
     productColor,
+    productQuantity,
     productButton
   );
   productImageContainer.append(productImage);
