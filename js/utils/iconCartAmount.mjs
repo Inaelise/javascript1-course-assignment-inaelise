@@ -1,4 +1,5 @@
-export function upDateAmount() {
+// Fix quantity
+export function updateAmount() {
   const countCart = document.querySelector(".cart-amount");
   const cart = JSON.parse(localStorage.getItem("cart"));
 
