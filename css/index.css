@@ -1,6 +1,7 @@
 @import url(-header.css);
 @import url(-home-page.css);
 @import url(-variables.css);
+@import url(-media.css);
 
 *,
 *:before,
@@ -15,6 +16,31 @@ body {
   display: block;
   font-family: "Lato", sans-serif;
   background-color: var(--blue);
+}
+
+header,
+footer {
+  background-color: var(--dark-blue);
+  color: var(--white);
+}
+
+header a:after,
+footer a:after {
+  display: block;
+  content: "";
+  border-bottom: 1px solid var(--white);
+  transform: scaleX(0);
+  transition: transform 250ms ease-in-out;
+  transform-origin: 0% 50%;
+}
+
+header a:hover:after,
+footer a:hover:after {
+  transform: scaleX(1);
+}
+
+.active {
+  border-bottom: 1px solid var(--white);
 }
 
 a {

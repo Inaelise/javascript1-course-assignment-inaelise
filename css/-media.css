@@ -1,0 +1,60 @@
+@media screen and (min-width: 30.07em) {
+}
+
+@media screen and (min-width: 48.1em) {
+  /* Home page */
+  #display-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (min-width: 64em) {
+  /* Header */
+
+  header {
+    justify-content: space-between;
+  }
+
+  nav {
+    display: block;
+    position: static;
+    min-height: 100%;
+    width: 100%;
+  }
+  .menu-icon {
+    display: none;
+  }
+
+  header ul {
+    flex-direction: row;
+    justify-content: end;
+    font-size: 1.1rem;
+  }
+
+  header li {
+    padding: 0rem 2rem;
+    border-bottom: none;
+  }
+
+  .extra-links {
+    display: none;
+  }
+
+  .logo {
+    width: 35%;
+  }
+
+  .active .cart-icon {
+    border-bottom: 1px solid var(--white);
+  }
+
+  /* Home page */
+  #display-container {
+    margin: auto;
+    padding: 3rem;
+    /*  width: 100%; */
+    text-align: center;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 4rem;
+  }
+}
