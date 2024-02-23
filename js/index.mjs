@@ -2,6 +2,25 @@ import { API_URL } from "./utils/api.mjs";
 /* import { updateAmount } from "./utils/iconCartAmount.mjs"; */
 import { fetchProducts } from "./utils/fetchProducts.mjs";
 
+const allBtn = document.getElementById("all");
+const femaleBtn = document.getElementById("female");
+const maleBtn = document.getElementById("male");
+
+let chosenFilter = "";
+
+allBtn.addEventListener("click", () => {
+  chosenFilter = "";
+  renderPage();
+});
+femaleBtn.addEventListener("click", () => {
+  chosenFilter = "Female";
+  renderPage();
+});
+maleBtn.addEventListener("click", () => {
+  chosenFilter = "Male";
+  renderPage();
+});
+
 function renderProductHtml(item) {
   const productItem = document.createElement("a");
   productItem.href = "/product.html?id=" + item.id;
@@ -24,13 +43,21 @@ function renderProductHtml(item) {
 
 function displayProductList(items) {
   const displayContainer = document.getElementById("display-container");
-  items.forEach((item) => {
-    const productHtml = renderProductHtml(item);
-    displayContainer.appendChild(productHtml);
-  });
+  displayContainer.textContent = "";
+
+  items
+    .filter((item) => {
+      if (item.gender === chosenFilter || chosenFilter === "") {
+        return true;
+      }
+    })
+    .forEach((item) => {
+      const productHtml = renderProductHtml(item);
+      displayContainer.appendChild(productHtml);
+    });
 }
 
-async function main() {
+async function renderPage() {
   try {
     const { data: items } = await fetchProducts(API_URL);
     // Updates cart amount on checkout icon
@@ -40,6 +67,10 @@ async function main() {
   } catch (error) {
     console.log("Error", error);
   }
+}
+
+async function main() {
+  await renderPage();
 }
 
 main();
