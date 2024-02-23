@@ -43,11 +43,24 @@ nav {
   z-index: 1000;
 }
 
-.cart-icon {
+#cart-icon {
   position: relative;
 }
 
-.cart-icon span {
+#cart-amount {
+  position: absolute;
+  top: 13px;
+  right: 35px;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 1.1rem;
+}
+
+/* #cart-icon {
+  position: relative;
+}
+
+.cart-amount {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -57,10 +70,9 @@ nav {
   height: 25px;
   border-radius: 50%;
   position: absolute;
-  top: 250px;
   left: 55px;
-  display: none;
-}
+  display: block;
+} */
 
 #hamburger-menu:checked ~ nav {
   display: block;
