@@ -1,14 +1,19 @@
-// Fix quantity
-export function updateAmount() {
-  const countCart = document.querySelector(".cart-amount");
+function getTotalCartAmount() {
   const cart = JSON.parse(localStorage.getItem("cart"));
+  const totalAmount = cart.reduce((total, item) => {
+    total += item.quantity;
+    return total;
+  }, 0);
+  return totalAmount;
+}
 
-  const quantity = cart.map((item) => item.quantity);
-  const totalAmount = quantity.reduce((a, b) => a + b, 0);
+export function updateIcon() {
+  const countCart = document.getElementById("cart-amount");
+  const totalNumbers = getTotalCartAmount();
 
-  if (totalAmount < 1) {
+  if (totalNumbers < 1) {
     countCart.style.display = "none";
   } else {
-    countCart.textContent = totalAmount;
+    countCart.textContent = totalNumbers;
   }
 }

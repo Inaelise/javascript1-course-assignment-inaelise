@@ -1,4 +1,10 @@
-import { removeFromCart, clearCart } from "./utils/shoppingCart.mjs";
+import { updateIcon } from "./utils/iconCartAmount.mjs";
+import {
+  removeFromCart,
+  clearCart,
+  addToCart,
+  remove,
+} from "./utils/shoppingCart.mjs";
 
 function renderCheckoutHtml(items) {
   const productContent = document.createElement("div");
@@ -34,18 +40,20 @@ function renderCheckoutHtml(items) {
   increaseQnty.classList.add = "plus";
   increaseQnty.innerHTML = `<i class="fa-solid fa-plus"></i>`;
   increaseQnty.addEventListener("click", () => {
-    addQuantity();
+    addToCart(items);
+    renderPage();
   });
 
   const quantity = document.createElement("p");
   quantity.id = "quantity";
-  quantity.textContent = items.quantity;
+  quantity.textContent = `${items.quantity}`;
 
   const decreaseQnty = document.createElement("button");
   decreaseQnty.classList.add = "minus";
   decreaseQnty.innerHTML = `<i class="fa-solid fa-minus"></i>`;
   decreaseQnty.addEventListener("click", () => {
-    subtractQuantity();
+    remove(items);
+    renderPage();
   });
 
   const deleteItem = document.createElement("button");
@@ -55,6 +63,7 @@ function renderCheckoutHtml(items) {
   `;
   deleteItem.addEventListener("click", () => {
     removeFromCart(items);
+    renderPage();
   });
 
   quantityContainer.append(decreaseQnty, quantity, increaseQnty);
@@ -71,17 +80,10 @@ function renderCheckoutHtml(items) {
   return productContent;
 }
 
-function subtractQuantity() {
-  //
-}
-
-function addQuantity() {
-  //
-}
-
 function displayCart() {
   const checkoutContainer = document.getElementById("checkout");
   const cart = JSON.parse(localStorage.getItem("cart"));
+  checkoutContainer.textContent = "";
 
   if (cart.length > 0) {
     cart.forEach((currentItem) => {
@@ -105,7 +107,7 @@ function displayCart() {
     purchaseButton.textContent = "Confirm purchase";
     purchaseButton.addEventListener("click", () => {
       clearCart();
-      location.reload();
+      renderPage();
     });
 
     checkoutContainer.append(totalCost, purchaseButton);
@@ -121,8 +123,13 @@ function displayCart() {
   }
 }
 
-function main() {
+function renderPage() {
+  updateIcon();
   displayCart();
+}
+
+function main() {
+  renderPage();
 }
 
 main();

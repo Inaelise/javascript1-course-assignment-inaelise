@@ -1,6 +1,7 @@
 import { API_URL } from "./utils/api.mjs";
-/* import { updateAmount } from "./utils/iconCartAmount.mjs"; */
 import { fetchProducts } from "./utils/fetchProducts.mjs";
+import { createCart } from "./utils/shoppingCart.mjs";
+import { updateIcon } from "./utils/iconCartAmount.mjs";
 
 const allBtn = document.getElementById("all");
 const femaleBtn = document.getElementById("female");
@@ -61,7 +62,7 @@ async function renderPage() {
   try {
     const { data: items } = await fetchProducts(API_URL);
     // Updates cart amount on checkout icon
-    /* updateAmount(); */
+    updateIcon();
     displayProductList(items);
     console.log(items); // Remember to remove.
   } catch (error) {
@@ -70,6 +71,7 @@ async function renderPage() {
 }
 
 async function main() {
+  createCart();
   await renderPage();
 }
 

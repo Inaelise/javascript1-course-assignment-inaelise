@@ -1,6 +1,7 @@
 import { fetchProducts } from "./utils/fetchProducts.mjs";
 import { API_URL } from "./utils/api.mjs";
-import { addToCart, createCart } from "./utils/shoppingCart.mjs";
+import { addToCart } from "./utils/shoppingCart.mjs";
+import { updateIcon } from "./utils/iconCartAmount.mjs";
 
 function renderProductDetailHtml(items) {
   const productContent = document.createElement("div");
@@ -60,6 +61,7 @@ function renderProductDetailHtml(items) {
   productButton.textContent = "Add to cart";
   productButton.addEventListener("click", () => {
     addToCart(items);
+    renderPage();
   });
 
   productColor.append(colorOptionTitle, colorOptions);
@@ -83,21 +85,26 @@ function renderProductDetailHtml(items) {
 
 function displayProductDetail(items) {
   const productDetail = document.getElementById("product-detail");
+  productDetail.textContent = "";
 
   const productDetailHtml = renderProductDetailHtml(items);
   productDetail.appendChild(productDetailHtml);
 }
 
-async function main() {
+async function renderPage() {
   const productId = new URLSearchParams(window.location.search).get("id");
-  createCart();
   try {
     const { data: items } = await fetchProducts(`${API_URL}/${productId}`);
+    updateIcon();
     displayProductDetail(items);
     console.log(items, productId); // Remember to remove.
   } catch (error) {
     console.log("Error", error);
   }
+}
+
+async function main() {
+  renderPage();
 }
 
 main();
