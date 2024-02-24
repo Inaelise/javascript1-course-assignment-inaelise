@@ -34,7 +34,7 @@ function renderProductDetailHtml(items) {
   productSize.title = "Click to select size";
   productSize.ariaLabel = "Select button";
   productSize.innerHTML = `
-  <option>Size:</option>
+  <option hidden disabled selected value>Size:</option>
   ${items.sizes.map((size) => `<option value="${size}">${size}</option>`)}
   `;
 
@@ -43,13 +43,18 @@ function renderProductDetailHtml(items) {
   productColor.classList.add = "selector";
   productColor.title = "Click to select color";
   productColor.ariaLabel = "Select button";
+  productColor.innerHTML = `
+  <option hidden disabled selected value>Color:</option>
+  <option value="${items.baseColor}">${items.baseColor}</option>
+  `;
 
-  const colorOptionTitle = document.createElement("option");
+  /* const colorOptionTitle = document.createElement("option");
+  colorOptionTitle.ariaPlaceholder = "color:"
   colorOptionTitle.textContent = "Color:";
 
   const colorOptions = document.createElement("option");
   colorOptions.value = items.baseColor;
-  colorOptions.textContent = items.baseColor;
+  colorOptions.textContent = items.baseColor; */
 
   const productQuantity = document.createElement("input");
   productQuantity.type = "number";
@@ -58,13 +63,14 @@ function renderProductDetailHtml(items) {
 
   const productButton = document.createElement("button");
   productButton.classList.add = "add-to-cart-btn";
+  productButton.id = "add-cart-btn";
   productButton.textContent = "Add to cart";
   productButton.addEventListener("click", () => {
     addToCart(items);
     renderPage();
   });
 
-  productColor.append(colorOptionTitle, colorOptions);
+  /* productColor.append(colorOptionTitle, colorOptions); */
   productInfoContainer.append(
     productPrice,
     productDescription,
@@ -97,9 +103,9 @@ async function renderPage() {
     const { data: items } = await fetchProducts(`${API_URL}/${productId}`);
     updateIcon();
     displayProductDetail(items);
-    console.log(items, productId); // Remember to remove.
+    /* console.log(items, productId); */ // Remember to remove.
   } catch (error) {
-    console.log("Error", error);
+    alert("Error fetching product", error);
   }
 }
 
