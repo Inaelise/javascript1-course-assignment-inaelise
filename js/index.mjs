@@ -66,7 +66,7 @@ async function renderPage() {
     displayProductList(items);
     console.log(items); // Remember to remove.
   } catch (error) {
-    console.log("Error", error);
+    alert("Error fetching products", error);
   }
 }
 
