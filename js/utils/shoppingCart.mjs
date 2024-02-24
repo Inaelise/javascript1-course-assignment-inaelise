@@ -14,12 +14,17 @@ export function addToCart(items) {
   const colorElement = document.getElementById("color-selector");
   const quantityInput = document.getElementById("quantity-input");
 
-  /*  const chosenSize = sizeElement.value;
+  const chosenSize = sizeElement.value;
   const chosenColor = colorElement.value;
-  const chosenQuantity = parseInt(quantityInput.value); */
+  const chosenQuantity = parseInt(quantityInput.value);
+  const productId = items.id;
 
   const itemIndex = cart.findIndex(function (currentItem) {
-    if (items.id === currentItem.id) {
+    if (
+      productId === currentItem.id &&
+      currentItem.size === chosenSize &&
+      currentItem.color === chosenColor
+    ) {
       return true;
     }
     return false;
@@ -27,18 +32,43 @@ export function addToCart(items) {
   if (itemIndex === -1) {
     cart.push({
       ...items,
-      /*       size: chosenSize,
-      color: chosenColor, */
-      quantity: 1,
+      size: chosenSize,
+      color: chosenColor,
+      quantity: chosenQuantity,
     });
   } else {
-    cart[itemIndex].quantity += 1;
+    cart[itemIndex].quantity += chosenQuantity;
   }
 
   localStorage.setItem("cart", JSON.stringify(cart));
 }
 
-export function remove(items) {
+export function incrementQuantity(items) {
+  const cart = JSON.parse(localStorage.getItem("cart"));
+
+  const productId = items.id;
+  const itemIndex = cart.findIndex(function (currentItem) {
+    if (
+      productId === currentItem.id &&
+      currentItem.size === items.size &&
+      currentItem.color === items.color
+    ) {
+      return true;
+    }
+    return false;
+  });
+  if (itemIndex === -1) {
+    cart.push({
+      ...items,
+      quantity: 1,
+    });
+  } else {
+    cart[itemIndex].quantity += 1;
+  }
+  localStorage.setItem("cart", JSON.stringify(cart));
+}
+
+export function decrementQuantity(items) {
   const cart = JSON.parse(localStorage.getItem("cart"));
   const productId = items.id;
   const itemIndex = cart.findIndex(function (currentItem) {
