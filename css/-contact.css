@@ -1,0 +1,67 @@
+.contact-banner {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.contact-img-container img {
+  width: 100%;
+}
+
+.contact-banner-info {
+  padding: 0 1rem;
+}
+
+.contact-banner-info p {
+  font-size: 1.2rem;
+}
+
+.contact-banner-info h1 {
+  font-size: 2.5rem;
+}
+
+.contact-sections h2 {
+  font-size: 1.8rem;
+}
+
+.contact-sections i {
+  font-size: 2rem;
+}
+
+.contact-sections {
+  padding: 1rem 0.5rem;
+}
+
+.phone-section {
+  border-bottom: 2px solid var(--white);
+}
+
+.phone-section,
+.chat-section {
+  text-align: center;
+  padding: 1.5rem 0;
+}
+
+.phone-number {
+  font-weight: 600;
+  color: rgb(4, 17, 59);
+}
+
+.chat-container {
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(4, 17, 59);
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.216);
+}
+
+.chat-box {
+  color: var(--white);
+}
+
+.chat-icon {
+  color: rgb(4, 17, 59);
+}

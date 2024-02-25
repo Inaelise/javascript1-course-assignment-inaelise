@@ -199,6 +199,47 @@
     line-height: 2rem;
   }
 
+  /* Contact page */
+  .contact-main {
+    padding-bottom: 70px;
+  }
+
+  .contact-main p {
+    font-size: 1.3rem;
+  }
+
+  .contact-img-container {
+    position: relative;
+  }
+
+  .contact-sections {
+    position: absolute;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    bottom: 0;
+  }
+
+  .phone-section,
+  .chat-section {
+    background-color: var(--blue);
+    padding: 2rem 1rem;
+    border-radius: 20px;
+  }
+
+  .phone-section {
+    border-bottom: none;
+  }
+
+  .contact-banner-info {
+    position: absolute;
+    top: 100px;
+    width: 600px;
+    border-radius: 0 50px 50px 0;
+    padding-bottom: 2rem;
+  }
+
   /* Product page */
   .product-main h1 {
     font-size: 2rem;
