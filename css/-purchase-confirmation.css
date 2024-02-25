@@ -58,6 +58,7 @@
 #total-price-title,
 .confirmation-main h4 {
   font-weight: 800;
+  text-transform: uppercase;
 }
 
 .confirmation-main h4 {
@@ -77,6 +78,10 @@
 #subtotal-container h4,
 #amount-payed h4 {
   margin: 0;
+}
+
+#subtotal-container {
+  padding-top: 2rem;
 }
 
 #browse-btn {
