@@ -145,10 +145,10 @@ function displayCart() {
 
     checkoutContainer.append(totalCost, purchaseButton);
   } else {
-    checkoutContainer.innerHTML = `<p>There are no products in your cart.</p>`;
+    checkoutContainer.innerHTML = `<p class="no-products">Oops, there are no products in your cart.</p>`;
 
     const startShoppingBtn = document.createElement("a");
-    startShoppingBtn.classList.add = "start-shopping-btn";
+    startShoppingBtn.id = "start-shopping-btn";
     startShoppingBtn.textContent = "Start shopping";
     startShoppingBtn.href = "/index.html";
 
