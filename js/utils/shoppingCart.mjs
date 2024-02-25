@@ -7,9 +7,6 @@ export function createCart() {
 
 export function addToCart(items) {
   const cart = JSON.parse(localStorage.getItem("cart"));
-  // Get values and insert to cart item it applies.
-  // If values are the same, increase item quantity.
-  // If not the same, add new item to cart with those values.
   const sizeElement = document.getElementById("size-selector");
   const colorElement = document.getElementById("color-selector");
   const quantityInput = document.getElementById("quantity-input");
@@ -106,7 +103,6 @@ export function removeFromCart(items) {
   }
 }
 
-// Add to purchase button
 export function clearCart() {
   const cart = JSON.parse(localStorage.getItem("cart"));
   if (cart) {

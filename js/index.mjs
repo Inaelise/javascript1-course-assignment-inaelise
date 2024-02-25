@@ -31,10 +31,10 @@ function renderProductHtml(item) {
   const itemImage = document.createElement("img");
   itemImage.src = item.image.url;
 
-  const itemTitle = document.createElement("h2");
+  const itemTitle = document.createElement("h3");
   itemTitle.textContent = item.title;
 
-  const itemPrice = document.createElement("h3");
+  const itemPrice = document.createElement("h4");
   itemPrice.textContent = `NOK ${item.price}`;
 
   productItem.append(itemImage, itemTitle, itemPrice);
@@ -64,7 +64,6 @@ async function renderPage() {
     // Updates cart amount on checkout icon
     updateIcon();
     displayProductList(items);
-    console.log(items); // Remember to remove.
   } catch (error) {
     alert("Error fetching products", error);
   }

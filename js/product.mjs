@@ -7,14 +7,14 @@ function renderProductDetailHtml(items) {
   const productContent = document.createElement("div");
 
   const productImageContainer = document.createElement("div");
-  productImageContainer.classList.add = "product-image";
+  productImageContainer.id = "product-image";
 
   const productImage = document.createElement("img");
   productImage.src = items.image.url;
   productImage.alt = `Product image`;
 
   const productInfoContainer = document.createElement("div");
-  productInfoContainer.classList.add = "product-info";
+  productInfoContainer.id = "product-info";
 
   const productTitle = document.createElement("h1");
   productTitle.classList.add = "product-title";
@@ -28,9 +28,11 @@ function renderProductDetailHtml(items) {
   productDescription.classList.add = "product-description";
   productDescription.textContent = items.description;
 
+  const selectContainer = document.createElement("div");
+  selectContainer.id = "select-container";
+
   const productSize = document.createElement("select");
   productSize.id = "size-selector";
-  productSize.classList.add = "selector";
   productSize.title = "Click to select size";
   productSize.ariaLabel = "Select button";
   productSize.innerHTML = `
@@ -40,7 +42,6 @@ function renderProductDetailHtml(items) {
 
   const productColor = document.createElement("select");
   productColor.id = "color-selector";
-  productColor.classList.add = "selector";
   productColor.title = "Click to select color";
   productColor.ariaLabel = "Select button";
   productColor.innerHTML = `
@@ -48,36 +49,49 @@ function renderProductDetailHtml(items) {
   <option value="${items.baseColor}">${items.baseColor}</option>
   `;
 
-  /* const colorOptionTitle = document.createElement("option");
-  colorOptionTitle.ariaPlaceholder = "color:"
-  colorOptionTitle.textContent = "Color:";
-
-  const colorOptions = document.createElement("option");
-  colorOptions.value = items.baseColor;
-  colorOptions.textContent = items.baseColor; */
-
   const productQuantity = document.createElement("input");
   productQuantity.type = "number";
   productQuantity.id = "quantity-input";
+  productQuantity.min = 1;
   productQuantity.value = 1;
 
   const productButton = document.createElement("button");
-  productButton.classList.add = "add-to-cart-btn";
   productButton.id = "add-cart-btn";
   productButton.textContent = "Add to cart";
   productButton.addEventListener("click", () => {
+    const sizeElement = document.getElementById("size-selector");
+    const colorElement = document.getElementById("color-selector");
+    const quantityInput = document.getElementById("quantity-input");
+
+    const chosenSize = sizeElement.value;
+    const chosenColor = colorElement.value;
+    const chosenQuantity = parseInt(quantityInput.value);
+
+    const isValid = (chosenSize, chosenColor, chosenQuantity) => {
+      return chosenSize !== "" && chosenColor !== "" && chosenQuantity > 0;
+    };
+    if (!isValid(chosenSize, chosenColor, chosenQuantity)) {
+      alert(
+        "Oops, please select size, color and quantity before adding to cart."
+      );
+      return;
+    }
+
     addToCart(items);
     renderPage();
   });
 
-  /* productColor.append(colorOptionTitle, colorOptions); */
-  productInfoContainer.append(
-    productPrice,
-    productDescription,
+  selectContainer.append(
     productSize,
     productColor,
     productQuantity,
     productButton
+  );
+
+  productInfoContainer.append(
+    productPrice,
+    productDescription,
+    selectContainer
   );
   productImageContainer.append(productImage);
   productContent.append(
@@ -103,7 +117,6 @@ async function renderPage() {
     const { data: items } = await fetchProducts(`${API_URL}/${productId}`);
     updateIcon();
     displayProductDetail(items);
-    /* console.log(items, productId); */ // Remember to remove.
   } catch (error) {
     alert("Error fetching product", error);
   }

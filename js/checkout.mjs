@@ -8,9 +8,10 @@ import {
 
 function renderCheckoutHtml(items) {
   const productContent = document.createElement("div");
+  productContent.id = "content-container";
 
   const productImageContainer = document.createElement("div");
-  productImageContainer.classList.add = "product-image";
+  productImageContainer.id = "image-container";
 
   const productImage = document.createElement("img");
   productImage.src = items.image.url;
@@ -20,47 +21,53 @@ function renderCheckoutHtml(items) {
   productInfoContainer.classList.add = "product-info";
 
   const productTitle = document.createElement("h2");
-  productTitle.classList.add = "product-title";
   productTitle.textContent = `${items.title}`;
 
   const productPrice = document.createElement("div");
-  productPrice.classList.add = "product-price";
+  productPrice.id = "product-price";
   productPrice.innerHTML = `
   <h3>NOK ${items.price}</h3>
-  <p>(Price per item)</p>
+  <p>(price per item)</p>
   `;
 
   const productPriceTotal = document.createElement("div");
   const totalPrice = items.price * items.quantity;
-  productPriceTotal.classList.add = "total-product-price";
+  productPriceTotal.id = "total-product-price";
   productPriceTotal.innerHTML = `
-  <p>Total:</p>
+  <p id="total-title">Total:</p>
   <p>NOK ${totalPrice.toFixed(2)}</p>
   `;
 
   const sizeContainer = document.createElement("div");
-  sizeContainer.classList.add = "size-container";
+  sizeContainer.id = "size-container";
 
   const sizeTitle = document.createElement("p");
+  sizeTitle.id = "size-title";
   sizeTitle.textContent = "Size:";
 
   const selectedSize = document.createElement("p");
   selectedSize.textContent = items.size;
 
   const colorContainer = document.createElement("div");
-  colorContainer.classList.add = "color-container";
+  colorContainer.id = "color-container";
 
   const colorTitle = document.createElement("p");
+  colorTitle.id = "color-title";
   colorTitle.textContent = "Color:";
 
   const selectedColor = document.createElement("p");
   selectedColor.textContent = items.color;
 
   const quantityContainer = document.createElement("div");
-  quantityContainer.classList.add = "quantity-container";
+  quantityContainer.id = "quantity-container";
+
+  const quantityTitle = document.createElement("p");
+  quantityTitle.id = "quantity-title";
+  quantityTitle.textContent = "Quantity:";
 
   const increaseQnty = document.createElement("button");
-  increaseQnty.classList.add = "plus";
+  increaseQnty.id = "plus";
+  increaseQnty.title = "Click to increase quantity";
   increaseQnty.innerHTML = `<i class="fa-solid fa-plus"></i>`;
   increaseQnty.addEventListener("click", () => {
     incrementQuantity(items);
@@ -72,7 +79,8 @@ function renderCheckoutHtml(items) {
   quantity.textContent = `${items.quantity}`;
 
   const decreaseQnty = document.createElement("button");
-  decreaseQnty.classList.add = "minus";
+  decreaseQnty.id = "minus";
+  decreaseQnty.title = "Click to decrease quantity";
   decreaseQnty.innerHTML = `<i class="fa-solid fa-minus"></i>`;
   decreaseQnty.addEventListener("click", () => {
     decrementQuantity(items);
@@ -80,7 +88,8 @@ function renderCheckoutHtml(items) {
   });
 
   const deleteItem = document.createElement("button");
-  deleteItem.classList.add = "delete-button";
+  deleteItem.id = "delete-button";
+  deleteItem.title = "Click to delete product";
   deleteItem.innerHTML = `
   <i class="fa-solid fa-trash"></i>
   `;
@@ -91,18 +100,21 @@ function renderCheckoutHtml(items) {
 
   sizeContainer.append(sizeTitle, selectedSize);
   colorContainer.append(colorTitle, selectedColor);
-  quantityContainer.append(decreaseQnty, quantity, increaseQnty);
+  quantityContainer.append(quantityTitle, decreaseQnty, quantity, increaseQnty);
   productInfoContainer.append(
     productTitle,
     productPrice,
     sizeContainer,
     colorContainer,
     quantityContainer,
-    productPriceTotal,
-    deleteItem
+    productPriceTotal
   );
   productImageContainer.append(productImage);
-  productContent.append(productImageContainer, productInfoContainer);
+  productContent.append(
+    deleteItem,
+    productImageContainer,
+    productInfoContainer
+  );
   return productContent;
 }
 
@@ -118,18 +130,17 @@ function displayCart() {
     });
 
     const totalCost = document.createElement("div");
+    totalCost.id = "total-cost";
     totalCost.innerHTML = `
     <h4>Subtotal:</h4>
-    <p>NOK ${getSubtotal()}</p>
+    <p id="subtotal">NOK ${getSubtotal()}</p>
     `;
 
     const purchaseButton = document.createElement("button");
-    purchaseButton.classList.add = "purchase-btn";
-    purchaseButton.textContent = "Confirm purchase";
+    purchaseButton.id = "purchase-btn";
+    purchaseButton.textContent = "Purchase";
     purchaseButton.addEventListener("click", () => {
-      /* clearCart(); */
       window.location.href = "/purchase-confirmation.html";
-      /* renderPage(); */
     });
 
     checkoutContainer.append(totalCost, purchaseButton);
