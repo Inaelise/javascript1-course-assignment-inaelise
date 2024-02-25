@@ -140,7 +140,7 @@ function displayCart() {
     purchaseButton.id = "purchase-btn";
     purchaseButton.textContent = "Purchase";
     purchaseButton.addEventListener("click", () => {
-      window.location.href = "/purchase-confirmation.html";
+      window.location.href = "./purchase-confirmation.html";
     });
 
     checkoutContainer.append(totalCost, purchaseButton);
