@@ -19,7 +19,7 @@
       crossorigin="anonymous"
     ></script>
     <link rel="stylesheet" href="./css/index.css" />
-    <title>RAINYDAYS | Home page</title>
+    <title>RAINYDAYS | Home</title>
   </head>
   <body>
     <header>
@@ -64,19 +64,59 @@
         </ul>
       </nav>
     </header>
-
     <main class="home-main">
-      <h1>Our collection</h1>
+      <div class="banner-container">
+        <div class="home-banner">
+          <img
+            class="desktop"
+            src="images/banner-image.jpg"
+            alt="people hiking a mountain"
+          />
+          <img
+            class="mobile"
+            src="images/banner-image-mobile.jpg"
+            alt="people hiking a mountain"
+          />
+        </div>
+        <h1 class="motto">Pushing the comfort zone</h1>
+      </div>
+      <h2>Our collection</h1>
       <div class="main-container">
         <div class="filter-container">
-          <button id="all">All</button>
-          <button id="female">Female</button>
-          <button id="male">Male</button>
+          <button id="all" title="Click to show all items">All</button>
+          <button id="female" title="Click to filter">Female</button>
+          <button id="male" title="Click to filter">Male</button>
         </div>
         <div id="display-container"></div>
       </div>
     </main>
-
-    <footer></footer>
+    <footer>
+      <div class="socials">
+        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+      </div>
+      <div class="links">
+        <a href="./index.html">Home</a>
+        <a href="./about.html">About</a>
+        <a href="./checkout.html">Checkout</a>
+        <a href="./contact.html">Contact us</a>
+        <a href="#">Privacy policy</a>
+        <a href="#">Terms & conditions</a>
+      </div>
+      <div class="copyright-container">
+        <div>
+          <img
+            class="logo-footer"
+            src="./images/RainyDays_Logo2-white.png"
+            alt="Rainydays logo"
+          />
+        </div>
+        <div class="copyright">
+          <i class="fa-regular fa-copyright"></i>
+          <p>2024 rainydays</p>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>

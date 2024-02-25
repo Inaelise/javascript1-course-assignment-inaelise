@@ -1,0 +1,117 @@
+.checkout-main {
+  padding: 2rem 0;
+  padding-bottom: 3rem;
+}
+
+.checkout-main h1 {
+  text-transform: uppercase;
+  font-size: 2rem;
+  text-align: center;
+  padding-bottom: 1rem;
+}
+
+#content-container {
+  padding: 2rem 1rem;
+  border-top: 2px solid var(--white);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.checkout-main img {
+  width: 70%;
+  border-radius: 50%;
+  display: block;
+  margin: auto;
+}
+
+.checkout-main h2 {
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.checkout-main h3 {
+  color: rgb(4, 17, 59);
+  font-weight: 800;
+}
+
+#color-container,
+#size-container,
+#product-price,
+#quantity-container,
+#total-product-price {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+#color-title,
+#size-title,
+#quantity-title,
+#total-title {
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+#plus,
+#minus {
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.405);
+  background-color: var(--dark-blue);
+  color: var(--white);
+}
+
+#quantity {
+  font-size: 1.1rem;
+}
+
+#total-cost {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  border-top: 2px solid var(--white);
+}
+
+#total-cost h4 {
+  text-transform: uppercase;
+  font-weight: 800;
+}
+
+#purchase-btn {
+  display: block;
+  margin: auto;
+  border: none;
+  padding: 1rem;
+  text-transform: uppercase;
+  width: 250px;
+  border-radius: 20px;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.273);
+  background-color: rgb(4, 17, 59);
+  color: var(--white);
+  font-weight: 800;
+  font-size: 1.1rem;
+  letter-spacing: 5px;
+}
+
+#purchase-btn:hover {
+  background-color: var(--white);
+  border: 1px solid var(--dark-blue);
+  color: var(--dark-blue);
+}
+
+#delete-button {
+  border: none;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  font-size: 1rem;
+  background-color: rgb(198, 66, 66);
+  color: var(--white);
+  box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.273);
+  align-self: flex-end;
+}

@@ -1,0 +1,33 @@
+.about-main h1 {
+  margin: 0;
+  padding-bottom: 1rem;
+}
+
+.about-content {
+  background: linear-gradient(
+      rgba(255, 255, 255, 0.285),
+      rgba(255, 255, 255, 0.285)
+    ),
+    url(/images/about-image.jpg);
+  margin: 0;
+  height: 400px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 70vh;
+  text-align: center;
+  font-size: 1.1rem;
+  line-height: 1.6rem;
+  font-weight: 600;
+}
+
+.text-content {
+  padding: 1rem 0.5rem;
+}
+
+.about-cta {
+  background-color: rgb(4, 17, 59);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  color: var(--white);
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.216);
+}

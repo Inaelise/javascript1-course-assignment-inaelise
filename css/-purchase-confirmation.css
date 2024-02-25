@@ -1,0 +1,101 @@
+.confirmation-main {
+  padding-top: 2rem;
+}
+
+.confirmation-main h1 {
+  font-size: 2rem;
+  text-align: center;
+  padding-bottom: 1rem;
+  margin-top: 0;
+}
+
+.confirmation-main img {
+  width: 40%;
+}
+
+.confirmation-container {
+  background-color: var(--white);
+  border-radius: 20px 20px 0 0;
+  padding: 0 0.5rem;
+  padding-bottom: 3rem;
+}
+
+.confirmation-container h2 {
+  padding: 1rem 0;
+  text-align: center;
+}
+
+#purchase-summary {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+#summary-content {
+  border-bottom: 2px solid var(--dark-blue);
+}
+
+#summary-img-container {
+  text-align: center;
+}
+
+#selected-container-size,
+#selected-container-color,
+#selected-qnty-container,
+#total-price-container,
+#price-item-container,
+#subtotal-container,
+#amount-payed {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+#selected-size-title,
+#selected-color-title,
+#selected-qnty-title,
+#price-item,
+#total-price-title,
+.confirmation-main h4 {
+  font-weight: 800;
+}
+
+.confirmation-main h4 {
+  font-size: 1.2rem;
+}
+
+#subtotal-container,
+#amount-payed {
+  justify-content: center;
+}
+
+#subtotal-container p,
+#amount-payed p {
+  margin: 0;
+}
+
+#subtotal-container h4,
+#amount-payed h4 {
+  margin: 0;
+}
+
+#browse-btn {
+  display: block;
+  margin: auto;
+  border: 1px solid var(--dark-blue);
+  margin-top: 2rem;
+  padding: 1rem;
+  width: 250px;
+  border-radius: 20px;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.273);
+  background-color: var(--white);
+  color: var(--dark-blue);
+  font-weight: 800;
+  font-size: 1.1rem;
+}
+
+#browse-btn:hover {
+  border: none;
+  color: var(--white);
+  background-color: rgb(4, 17, 59);
+}
