@@ -24,7 +24,7 @@ maleBtn.addEventListener("click", () => {
 
 function renderProductHtml(item) {
   const productItem = document.createElement("a");
-  productItem.href = "product.html?id=" + item.id;
+  productItem.href = "./product.html?id=" + item.id;
   productItem.title = "Click to view details";
   productItem.classList.add("product-item");
 
